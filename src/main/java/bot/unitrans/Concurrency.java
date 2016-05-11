@@ -1,15 +1,14 @@
 package bot.unitrans;
 
 import org.joda.time.LocalTime;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.*;
 
-@SpringBootApplication
-public class HelloWorld {
+import static spark.Spark.*;
+
+public class Concurrency {
     private static final Object lock = new Object();
     private static Integer count = 0;
 
@@ -115,6 +114,5 @@ public class HelloWorld {
             }
         }).forEach(System.out::println);
 
-        //SpringApplication.run(HelloWorld.class, args);
     }
 }
